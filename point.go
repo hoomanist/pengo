@@ -1,24 +1,24 @@
 package pengo
 
 import (
-	"image/color"
+        "image/color"
 )
 
 type Point struct {
-	X            int
-	Y            int
-	stroke       color.Color
-	strokeWeight int
+        X            int
+        Y            int
+        Stroke       color.Color
+        StrokeWeight int
 }
 
 func (p *Point) Draw(c *Canvas) {
-	if p.strokeWeight == 1 {
-		c.img.Set(p.X, p.Y, p.stroke)
-	} else {
-		for i := p.X - p.strokeWeight; i < p.X+p.strokeWeight; i++ {
-			for j := p.Y - p.strokeWeight; j < p.Y+p.strokeWeight; j++ {
-				c.img.Set(i, j, p.stroke)
-			}
-		}
-	}
+        if p.StrokeWeight == 1 {
+                c.img.Set(p.X, p.Y, p.Stroke)
+        } else {
+                for i := p.X - p.StrokeWeight; i < p.X+p.StrokeWeight; i++ {
+                        for j := p.Y - p.StrokeWeight; j < p.Y+p.StrokeWeight; j++ {
+                                c.img.Set(i, j, p.Stroke)
+                        }
+                }
+        }
 }
