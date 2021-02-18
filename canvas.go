@@ -43,7 +43,7 @@ func (c *Canvas) SetQuality(quality int) {
 
 // save canvas into a file
 func (c *Canvas) Save(filename string, filetype string) error {
-	f, err := os.Create("filename")
+	f, err := os.Create(filename)
 	if err != nil {
 		return err
 	}
