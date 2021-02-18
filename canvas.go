@@ -2,6 +2,7 @@ package pengo
 
 import (
 	"image"
+	"image/color"
 	"image/jpeg"
 	"image/png"
 	"os"
@@ -16,11 +17,16 @@ type Canvas struct {
 }
 
 // create a new canvas with 80% quality
-func NewCanvas(width, height int) Canvas {
+func NewCanvas(width, height int, clr color.Color) Canvas {
 	img := image.NewRGBA(image.Rectangle{
 		image.Point{0, 0},
 		image.Point{width, height},
 	})
+	for x := 0; x < width; x++ {
+		for y := 0; y < height; y++ {
+			img.Set(x, y, clr)
+		}
+	}
 	canvas := Canvas{
 		width:   width,
 		height:  height,

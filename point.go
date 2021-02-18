@@ -5,11 +5,20 @@ import (
 )
 
 type Point struct {
-	X      int
-	Y      int
-	stroke color.Color
+	X            int
+	Y            int
+	stroke       color.Color
+	strokeWeight int
 }
 
 func (p *Point) Draw(c *Canvas) {
-	c.img.Set(p.X, p.Y, p.stroke)
+	if p.strokeWeight == 1 {
+		c.img.Set(p.X, p.Y, p.stroke)
+	} else {
+		for i := p.X - p.strokeWeight; i < p.X+p.strokeWeight; i++ {
+			for j := p.Y - p.strokeWeight; j < p.Y+p.strokeWeight; j++ {
+				c.img.Set(i, j, p.stroke)
+			}
+		}
+	}
 }
