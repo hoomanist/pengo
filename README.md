@@ -11,16 +11,15 @@ note: it is not that useful yet
 
 First you should create a new canvas
 
-``` 
+``` go
 canvas := pengo.NewCanvas(400, 600, color.RGBA{0x00, 0xff, 0x00, 0xff})
-
 ```
 
 this will create a 400x600 canvas with color green.
 
 you can add a point on canvas
 
-``` 
+``` go
 some_color := color.RGBA{0xff, 0x00, 0x00, 0xff}
 point := pengo.Point{
     100, //x position
@@ -29,11 +28,10 @@ point := pengo.Point{
     2, // thickness
 }
 point.Draw(&canvas)
-
 ```
  also a line:
 
- ``` 
+ ``` go
  line := pengo.Line{
     0 , // start position
     600, // end position
