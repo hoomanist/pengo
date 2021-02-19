@@ -10,10 +10,8 @@ import (
 
 // the canvas itseld
 type Canvas struct {
-	width   int
-	height  int
-	quality int
-	img     *image.RGBA
+	width, height, quality int
+	img                    *image.RGBA
 }
 
 // create a new canvas with 80% quality
