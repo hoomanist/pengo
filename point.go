@@ -5,10 +5,8 @@ import (
 )
 
 type Point struct {
-	X            int
-	Y            int
-	Stroke       color.Color
-	StrokeWeight int
+	X, Y, StrokeWeight int
+	Stroke             color.Color
 }
 
 func (p *Point) Draw(c *Canvas) {
