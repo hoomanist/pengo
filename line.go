@@ -5,9 +5,7 @@ import (
 )
 
 type Line struct {
-	X1        int
-	X2        int
-	Y         int
+	X1, X2, Y int
 	Direction string
 	Color     color.Color
 }
